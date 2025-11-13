@@ -1,4 +1,9 @@
+import { useTranslation } from "../i18n/LanguageProvider";
+
 const Instagram = () => {
+  const { t } = useTranslation();
+  const data = t("instagram");
+
   return (
     <section id="instagram" className="bg-light">
       <div className="container">
@@ -6,10 +11,8 @@ const Instagram = () => {
           <div className="instagram-content">
             <div className="instagram-header">
               <div className="instagram-title">
-                <h3>Síguenos en Instagram</h3>
-                <p className="instagram-subtitle">
-                  Contenido exclusivo y motivación diaria
-                </p>
+                <h3>{data.title}</h3>
+                <p className="instagram-subtitle">{data.subtitle}</p>
               </div>
               <a
                 href="https://instagram.com/2befit.online"
@@ -18,32 +21,22 @@ const Instagram = () => {
                 className="instagram-profile"
               >
                 <div className="instagram-avatar">
-                  <img src="/assets/logo.png" alt="2BEFIT" />
+                  <img src="/assets/favicon.png" alt="2BEFIT" />
                 </div>
                 <div className="instagram-info">
-                  <span className="instagram-handle">@2befit.online</span>
-                  <span className="instagram-meta">
-                    Entrenamiento personalizado
-                  </span>
+                  <span className="instagram-handle">{data.handle}</span>
+                  <span className="instagram-meta">{data.meta}</span>
                 </div>
               </a>
             </div>
             <div className="instagram-features">
-              <div className="instagram-feature">
-                <span className="feature-icon">💪</span>
-                <h4>Rutinas efectivas</h4>
-                <p>Ejercicios y técnicas para maximizar tus resultados</p>
-              </div>
-              <div className="instagram-feature">
-                <span className="feature-icon">🥗</span>
-                <h4>Tips de nutrición</h4>
-                <p>Consejos prácticos para una alimentación saludable</p>
-              </div>
-              <div className="instagram-feature">
-                <span className="feature-icon">🎯</span>
-                <h4>Motivación diaria</h4>
-                <p>Inspiración para mantener tu compromiso fitness</p>
-              </div>
+              {data.features.map((f, i) => (
+                <div key={i} className="instagram-feature">
+                  <span className="feature-icon">{f.icon}</span>
+                  <h4>{f.title}</h4>
+                  <p>{f.desc}</p>
+                </div>
+              ))}
             </div>
             <div className="instagram-cta">
               <a
@@ -53,11 +46,9 @@ const Instagram = () => {
                 className="btn btn-primary"
               >
                 <span className="instagram-btn-icon">📸</span>
-                Seguir en Instagram
+                {data.cta}
               </a>
-              <p className="instagram-followers">
-                Únete a nuestra comunidad de +1500 seguidores
-              </p>
+              <p className="instagram-followers">{data.followers}</p>
             </div>
           </div>
         </div>

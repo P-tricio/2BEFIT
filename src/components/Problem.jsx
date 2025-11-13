@@ -1,37 +1,24 @@
+import { useTranslation } from "../i18n/LanguageProvider";
+
 const Problem = () => {
+  const { t } = useTranslation();
+  const data = t("problem");
+
   return (
     <section id="problema" className="bg-light">
       <div className="container">
-        <h3>¿Por qué entrenar con nosotros?</h3>
+        <h3>{data.title}</h3>
         <div className="problema-wrapper">
           <div className="problema-intro">
-            <p>
-              Sabemos que empezar y mantener un estilo de vida saludable puede
-              ser difícil. Por eso te acompañamos en cada paso del camino.
-            </p>
+            <p>{data.intro}</p>
           </div>
           <div className="problemas-grid">
-            <div className="problema-item">
-              <span className="problema-tag">Tiempo</span>
-              <p>
-                Te ayudamos a optimizar tus entrenamientos para que encajen en
-                tu agenda ocupada.
-              </p>
-            </div>
-            <div className="problema-item">
-              <span className="problema-tag">Dudas</span>
-              <p>
-                Guía experta para asegurar que cada minuto de entrenamiento
-                cuenta.
-              </p>
-            </div>
-            <div className="problema-item">
-              <span className="problema-tag">Motivación</span>
-              <p>
-                Apoyo constante para mantener el impulso y alcanzar tus
-                objetivos.
-              </p>
-            </div>
+            {data.tags.map((tag, i) => (
+              <div key={i} className="problema-item">
+                <span className="problema-tag">{tag.tag}</span>
+                <p>{tag.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

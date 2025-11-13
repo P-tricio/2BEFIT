@@ -1,6 +1,9 @@
+import { useTranslation } from "../i18n/LanguageProvider";
+
 const WhatsAppButton = () => {
-  const phoneNumber = "+34667895697"; // Reemplaza con tu número de WhatsApp
-  const message = "¡Hola! Me gustaría obtener más información sobre 2BEFIT";
+  const { t } = useTranslation();
+  const phoneNumber = "+34667895697"; // replace with your number
+  const message = t("whatsapp.message_short");
 
   const handleClick = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
@@ -13,7 +16,7 @@ const WhatsAppButton = () => {
     <button
       className="whatsapp-button"
       onClick={handleClick}
-      aria-label="Contactar por WhatsApp"
+      aria-label={t("whatsapp.aria_label")}
     >
       <svg
         width="24"

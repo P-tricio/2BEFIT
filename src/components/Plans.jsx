@@ -1,48 +1,53 @@
+import { useTranslation } from "../i18n/LanguageProvider";
+
 const Plans = () => {
+  const { t } = useTranslation();
+  const data = t("plans");
+
+  const basic = data.basic;
+  const top = data.top;
+  const packBasic = data.pack.basic;
+  const packTop = data.pack.top;
+
   return (
     <section id="planes" className="bg-light">
       <div className="container">
-        <h3>Nuestros planes</h3>
+        <h3>{data.title}</h3>
         <div className="planes-tabs">
-          <h4>Planes mensuales</h4>
+          <h4>{data.monthly}</h4>
           <div className="planes-grid">
             <div className="plan-card">
               <div className="plan-header">
-                <h4>Plan basic</h4>
+                <h4>{basic.name}</h4>
                 <p className="precio">
-                  <span className="precio-anterior">159€</span>
-                  <span>129€</span>/mes
+                  <span className="precio-anterior">{basic.price_old}</span>
+                  <span>{basic.price}</span>/mes
                 </p>
               </div>
               <ul>
-                <li>Entrenamiento mensual personalizado</li>
-                <li>Guía nutricional por porciones o macros</li>
-                <li>Check-in semanal vía app</li>
-                <li>Revisión de progresos y ajustes</li>
-                <li>Acceso a la app Harbiz</li>
+                {basic.bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
               </ul>
               <a href="#contacto" className="btn btn-secondary">
-                Quiero empezar con BASIC
+                {basic.cta}
               </a>
             </div>
             <div className="plan-card popular">
+              <div className="popular-badge">{data.popular_badge}</div>
               <div className="plan-header">
-                <h4>Plan top</h4>
+                <h4>{top.name}</h4>
                 <p className="precio">
-                  <span>199€</span>/mes
+                  <span>{top.price}</span>/mes
                 </p>
               </div>
               <ul>
-                <li>
-                  <strong>Incluye todo lo del BASIC, más:</strong>
-                </li>
-                <li>Menús semanales personalizados</li>
-                <li>Videollamada quincenal de 30'</li>
-                <li>Corrección técnica por vídeo</li>
-                <li>Análisis básico de biomecánica</li>
+                {top.bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
               </ul>
               <a href="#contacto" className="btn btn-primary">
-                Quiero transformar mi físico
+                {top.cta}
               </a>
             </div>
           </div>
@@ -50,7 +55,7 @@ const Plans = () => {
 
         <div className="planes-tabs pack-transformacion">
           <div className="pack-header">
-            <h4>Pack Transformación</h4>
+            <h4>{data.pack.transform}</h4>
             <p className="pack-descripcion">
               6 meses para alcanzar tu mejor versión con seguimiento completo y
               precio especial
@@ -59,56 +64,50 @@ const Plans = () => {
           <div className="planes-grid">
             <div className="plan-card pack">
               <div className="plan-header">
-                <div className="pack-badge">Ahorra 175€</div>
-                <h4>Pack Basic</h4>
+                <div className="pack-badge">{packBasic.badge}</div>
+                <h4>{packBasic.name}</h4>
                 <p className="precio">
-                  <span>599€</span>
-                  <span className="periodo">6 meses</span>
+                  <span>{packBasic.price_total}</span>
+                  <span className="periodo">{packBasic.period}</span>
                 </p>
-                <p className="precio-mes">Equivalente a 99,83€/mes</p>
-                <p className="precio-anterior-total">Precio regular: 774€</p>
+                <p className="precio-mes">{packBasic.per_month}</p>
+                <p className="precio-anterior-total">{packBasic.previous}</p>
               </div>
               <ul>
-                <li>Entrenamiento personalizado 6 meses</li>
-                <li>Guía nutricional completa</li>
-                <li>Check-ins semanales</li>
-                <li>Acceso ilimitado a la app</li>
-                <li>Soporte continuo</li>
+                {packBasic.bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
               </ul>
               <a href="#contacto" className="btn btn-secondary">
-                Empezar Pack Basic
+                {packBasic.cta}
               </a>
             </div>
             <div className="plan-card pack popular">
+              <div className="popular-badge">{data.popular_badge}</div>
               <div className="plan-header">
-                <div className="pack-badge">Ahorra 295€</div>
-                <h4>Pack Top</h4>
+                <div className="pack-badge">{packTop.badge}</div>
+                <h4>{packTop.name}</h4>
                 <p className="precio">
-                  <span>899€</span>
-                  <span className="periodo">6 meses</span>
+                  <span>{packTop.price_total}</span>
+                  <span className="periodo">{packTop.period}</span>
                 </p>
-                <p className="precio-mes">Equivalente a 149,83€/mes</p>
-                <p className="precio-anterior-total">Precio regular: 1.194€</p>
+                <p className="precio-mes">{packTop.per_month}</p>
+                <p className="precio-anterior-total">{packTop.previous}</p>
               </div>
               <ul>
-                <li>
-                  <strong>Todo lo del Pack Basic más:</strong>
-                </li>
-                <li>Menús semanales detallados</li>
-                <li>12 videollamadas de seguimiento</li>
-                <li>Correcciones técnicas ilimitadas</li>
-                <li>Análisis biomecánico completo</li>
+                {packTop.bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
               </ul>
               <a href="#contacto" className="btn btn-primary">
-                Empezar Pack Top
+                {packTop.cta}
               </a>
             </div>
           </div>
         </div>
 
         <p className="consulta-gratuita">
-          ¿Tienes dudas? <a href="#contacto">Agenda una consulta gratuita</a> y
-          te ayudamos a elegir tu plan ideal.
+          {data.pack.cta_text} <a href="#contacto">{t("nav.start_now")}</a>
         </p>
       </div>
     </section>

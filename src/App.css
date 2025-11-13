@@ -110,8 +110,11 @@ p {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px var(--shadow);
-  padding: 1.2rem 0;
+  padding: 0.75rem 0;
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
@@ -126,6 +129,14 @@ p {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  min-height: 60px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
 }
 
 .logo {
@@ -134,33 +145,37 @@ p {
   z-index: 1001;
   display: flex;
   align-items: center;
-  height: 80px;
-  overflow: hidden;
+  height: 70px;
+  width: 70px;
+  overflow: visible;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .logo img {
-  height: 140%;
-  width: auto;
+  height: auto;
+  width: 100%;
   transition: all 0.3s ease;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  transform: scale(1.4);
 }
 
 .header.scrolled .logo {
-  height: 50px;
+  height: 55px;
+  width: 55px;
 }
 
 .header.scrolled .logo img {
-  height: 140%;
-  transform: scale(1.2);
+  height: auto;
+  width: 100%;
 }
 
 /* Navigation */
 .main-nav {
   display: flex;
   align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-list {
@@ -224,6 +239,44 @@ p {
   font-size: 0.95rem;
 }
 
+/* Language Switcher */
+.language-switcher {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.language-switcher:hover {
+  transform: scale(1.1);
+}
+
+.language-switcher .flag-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 30px;
+  background: transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.language-switcher .flag-icon .flag-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.language-switcher:hover .flag-icon {
+  transform: scale(1.1);
+}
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
   display: none;
@@ -271,8 +324,23 @@ p {
 }
 
 @media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: block;
+  .header {
+    padding: 0.5rem 0;
+  }
+
+  .header-container {
+    gap: 1rem;
+    min-height: 50px;
+  }
+
+  .logo {
+    height: 55px;
+    width: 55px;
+  }
+
+  .header.scrolled .logo {
+    height: 45px;
+    width: 45px;
   }
 
   .main-nav {
@@ -288,6 +356,7 @@ p {
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
+    z-index: 999;
   }
 
   .main-nav.open {
@@ -317,6 +386,23 @@ p {
     padding: 1rem 2rem;
   }
 
+  .header-right {
+    gap: 0.75rem;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .language-switcher {
+    padding: 0.25rem;
+  }
+
+  .language-switcher .flag-icon {
+    width: 35px;
+    height: 23px;
+  }
+
   body.menu-open {
     overflow: hidden;
   }
@@ -341,6 +427,7 @@ p {
   align-items: center;
   text-align: center;
   color: var(--white);
+  margin-top: 70px;
 }
 
 /* Fondo del hero */
@@ -617,8 +704,28 @@ section h3 {
 .precio .precio-anterior {
   color: var(--text-gray);
   font-size: 1em;
+  text-decoration-line: line-through;
+  opacity: 0.7;
+}
+
+.precio-anterior-total {
+  color: var(--text-gray);
+  font-size: 0.95rem;
   text-decoration: line-through;
   opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+.pack-badge {
+  background: #ffebee;
+  color: #c62828;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .pack-oferta {
@@ -682,20 +789,21 @@ section h3 {
 .plan-card.popular {
   transform: scale(1.05);
   border: 2px solid var(--pale-green);
+  position: relative;
 }
 
-.plan-card.popular::before {
-  content: "Más popular";
+.popular-badge {
   position: absolute;
-  top: 1rem;
-  right: -4rem;
+  top: 1.2rem;
+  right: -2.5rem;
   background: var(--pale-green);
   color: white;
-  padding: 0.5rem 4rem;
+  padding: 0.5rem 2rem;
   transform: rotate(45deg);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .consulta-gratuita {
@@ -719,10 +827,18 @@ section h3 {
     transform: none;
   }
 
-  .plan-card.popular::before {
-    transform: rotate(45deg) translateY(-100%);
-    top: 2.5rem;
-    right: -5rem;
+  .popular-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: -3.5rem;
+    background: var(--pale-green);
+    color: white;
+    padding: 0.5rem 3.5rem;
+    transform: rotate(45deg);
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
   }
 }
 
@@ -851,10 +967,8 @@ ol,
   width: auto;
   margin-bottom: 0.75rem;
   display: inline-block;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  clip-path: inset(20% 0);
-  transform: scale(1.4);
 }
 
 .footer-brand {

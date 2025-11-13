@@ -1,4 +1,7 @@
+import { useTranslation } from "../i18n/LanguageProvider";
+
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -13,12 +16,12 @@ const Footer = () => {
           </div>
           <div className="footer-info">
             <div className="footer-links">
-              <a href="#planes">Planes</a>
-              <a href="#contacto">Contacto</a>
-              <a href="#faq">FAQ</a>
+              <a href="#planes">{t("footer.plans")}</a>
+              <a href="#contacto">{t("footer.contact")}</a>
+              <a href="#faq">{t("footer.faq")}</a>
             </div>
             <p className="footer-legal">
-              © {currentYear} 2BEFIT. Todos los derechos reservados.
+              © {currentYear} 2BEFIT. {t("footer.copyright")}
             </p>
           </div>
         </div>
