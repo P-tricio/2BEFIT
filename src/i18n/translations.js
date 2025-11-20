@@ -11,6 +11,7 @@ export const translations = {
       faq: "FAQ",
       plans: "Plans",
       instagram: "Instagram",
+      in_person: "In-Person",
       start_now: "Get started",
     },
     hero: {
@@ -21,7 +22,7 @@ export const translations = {
       cta_start: "I want to start!",
       cta_how: "How it works",
       stat_clients: "Happy clients",
-      stat_success: "Success rate",
+      stat_success: "Years of experience",
       stat_support: "Online support",
     },
     footer: {
@@ -173,7 +174,7 @@ export const translations = {
           cite: "Laura M.",
         },
         {
-          text: "Finally seeing the results I wanted for a long time. Patricio is super motivating.",
+          text: "Finally seeing the results I wanted for a long time. Patricio is a true expert and Cristina is enchanting.",
           cite: "Carlos G.",
         },
         {
@@ -258,6 +259,22 @@ export const translations = {
       aria_label: "Contact via WhatsApp",
       message_short: "Hello! I'd like more information about 2BEFIT",
     },
+    in_person_page: {
+      location_hook: "Prefer in-person training?",
+      title: "Do you live in Costa del Sol? We can train in person!",
+      description:
+        "We also offer in-person personal training sessions for those seeking direct technical correction and extra motivation.",
+      one_on_one: {
+        title: "1-on-1 training",
+        desc: "Fully personalized sessions where all attention is on you. Instant technique correction and real-time training adaptation.",
+      },
+      small_groups: {
+        title: "Small groups",
+        desc: "Train with friends or partners with similar goals. Keep motivation high and share the experience.",
+      },
+      cta: "Check Availability",
+      whatsapp_message: "Hello! I live in Costa Del Sol, could we train in person?",
+    },
   },
   es: {
     nav: {
@@ -269,6 +286,7 @@ export const translations = {
       faq: "FAQ",
       plans: "Planes",
       instagram: "Instagram",
+      in_person: "Presencial",
       start_now: "Empezar ahora",
     },
     hero: {
@@ -279,7 +297,7 @@ export const translations = {
       cta_start: "¡Quiero empezar!",
       cta_how: "Cómo funciona",
       stat_clients: "Clientes satisfechos",
-      stat_success: "Tasa de Éxito",
+      stat_success: "Años de experiencia",
       stat_support: "Soporte Online",
     },
     footer: {
@@ -431,7 +449,7 @@ export const translations = {
           cite: "Laura M.",
         },
         {
-          text: "Por fin estoy viendo los resultados que quería desde hace mucho. Patricio es súper motivador.",
+          text: "Por fin estoy viendo los resultados que quería desde hace mucho. Patricio es todo un experto y Cristina encantadora.",
           cite: "Carlos G.",
         },
         {
@@ -515,6 +533,22 @@ export const translations = {
     whatsapp: {
       aria_label: "Contactar por WhatsApp",
       message_short: "¡Hola! Me gustaría obtener más información sobre 2BEFIT",
+    },
+    in_person_page: {
+      location_hook: "¿Prefieres entrenamiento presencial?",
+      title: "¿Vives en la Costa del Sol? ¡Podemos entrenar en persona!",
+      description:
+        "También ofrecemos sesiones de entrenamiento personal presencial para aquellos que buscan una corrección técnica directa y motivación extra.",
+      one_on_one: {
+        title: "Entrenamiento 1 a 1",
+        desc: "Sesiones totalmente personalizadas donde toda la atención está en ti. Corrección de técnica al instante y adaptación del entrenamiento en tiempo real.",
+      },
+      small_groups: {
+        title: "Grupos reducidos",
+        desc: "Entrena con amigos o compañeros con objetivos similares. Mantén la motivación alta y comparte la experiencia.",
+      },
+      cta: "Consultar Disponibilidad",
+      whatsapp_message: "¡Hola! Vivo en la Costa Del Sol, ¿podríamos entrenar en persona?",
     },
   },
 };

@@ -8,35 +8,44 @@ const LanguageSwitcher = ({ className = "" }) => {
     setLang(lang === "es" ? "en" : "es");
   };
 
-  // SVG de bandera de España
+  // SVG de bandera de España (mejorada)
   const flagEs = (
     <svg
       className="flag-image"
-      viewBox="0 0 900 600"
+      viewBox="0 0 60 30"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="900" height="600" fill="#C60B1E" />
-      <rect y="150" width="900" height="300" fill="#FFC400" />
-      <rect width="900" height="600" fill="#C60B1E" opacity="0" />
+      <rect width="60" height="30" fill="#AA151B" />
+      <rect y="7.5" width="60" height="15" fill="#F1BF00" />
     </svg>
   );
 
-  // SVG de bandera de Reino Unido
+  // SVG de bandera de Reino Unido (mejorada)
   const flagEn = (
     <svg
       className="flag-image"
       viewBox="0 0 60 30"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <defs>
+        <clipPath id="cut-off-diagonals">
+          <rect width="60" height="30" />
+        </clipPath>
+      </defs>
+      
+      {/* Fondo azul */}
       <rect width="60" height="30" fill="#012169" />
-      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFF" strokeWidth="6" />
-      <path
-        d="M0,0 L60,30 M60,0 L0,30"
-        stroke="#C8102E"
-        strokeWidth="4"
-        clipPath="polygon(0 0, 60 0, 60 30, 0 30)"
-      />
+      
+      {/* Diagonales blancas */}
+      <g clipPath="url(#cut-off-diagonals)">
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#FFF" strokeWidth="6" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" strokeWidth="4" />
+      </g>
+      
+      {/* Cruz blanca */}
       <path d="M30,0 V30 M0,15 H60" stroke="#FFF" strokeWidth="10" />
+      
+      {/* Cruz roja */}
       <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6" />
     </svg>
   );
