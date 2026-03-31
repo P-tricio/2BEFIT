@@ -1,82 +1,66 @@
 import { useTranslation } from "../i18n/LanguageProvider";
+import { motion } from "framer-motion";
+import { UserCheck, TrendingUp, Smartphone, Wind } from "lucide-react";
 
-const BenefitIcon = ({ index }) => {
-  // Different icons for each benefit
-  const icons = [
-    // Personalized plans - target/crosshair
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <circle cx="12" cy="12" r="1" />
-      <circle cx="12" cy="12" r="5" />
-      <circle cx="12" cy="12" r="9" />
-      <line x1="12" y1="3" x2="12" y2="1" />
-      <line x1="12" y1="23" x2="12" y2="21" />
-      <line x1="3" y1="12" x2="1" y2="12" />
-      <line x1="23" y1="12" x2="21" y2="12" />
-    </svg>,
-    // Expert follow-up - chart/graph
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <polyline points="23 6 13 16 8 11 1 18" />
-      <polyline points="17 6 23 6 23 12" />
-    </svg>,
-    // Exclusive app - smartphone
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-      <line x1="12" y1="18" x2="12" y2="18.01" />
-    </svg>,
-    // Total flexibility - wind/movement
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
-    </svg>,
-  ];
-
-  return icons[index] || icons[0];
-};
+const iconList = [UserCheck, TrendingUp, Smartphone, Wind];
 
 const Benefits = () => {
   const { t } = useTranslation();
   const data = t("benefits");
 
   return (
-    <section id="beneficios">
-      <div className="container">
-        <div className="beneficios-header">
-          <h3>{data.header}</h3>
-          <p className="beneficios-subtitle">{data.subtitle}</p>
+    <section id="beneficios" className="py-16 md:py-24 bg-white border-t border-slate-100">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-14">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-black text-slate-900 mb-4"
+          >
+            {data.header || "Nuestros Beneficios Clave"}
+          </motion.h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">{data.subtitle}</p>
         </div>
-        <div className="beneficios-grid">
-          {data.items.map((it, i) => (
-            <div key={i} className="beneficio-item">
-              <div className="beneficio-icon">
-                <BenefitIcon index={i} />
-              </div>
-              <h4>{it.title}</h4>
-              <p>{it.desc}</p>
-            </div>
-          ))}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {data.items.map((it, i) => {
+            const Icon = iconList[i % iconList.length];
+            const accentColors = [
+              { bg: "bg-orange-100", text: "text-orange-500" },
+              { bg: "bg-blue-100", text: "text-blue-500" },
+              { bg: "bg-emerald-100", text: "text-emerald-600" },
+              { bg: "bg-purple-100", text: "text-purple-500" },
+            ];
+            const color = accentColors[i % accentColors.length];
+
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group flex flex-col items-center text-center p-7 rounded-2xl bg-white border border-slate-100 hover:border-emerald-200 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              >
+                {/* Glowy background on hover */}
+                <div className="absolute inset-0 bg-gradient-to-b from-emerald-50/0 to-emerald-50/0 group-hover:from-emerald-50/50 group-hover:to-emerald-50/20 transition-all duration-300 pointer-events-none" />
+
+                {/* Icon container */}
+                <motion.div
+                  className={`w-16 h-16 rounded-2xl ${color.bg} flex items-center justify-center mb-5 relative z-10 group-hover:scale-110 transition-transform duration-300`}
+                  whileHover={{ rotate: 5 }}
+                >
+                  <Icon size={28} className={color.text} strokeWidth={1.6} />
+                </motion.div>
+
+                {/* Content */}
+                <h3 className="text-base font-bold text-slate-900 mb-3 relative z-10">{it.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed relative z-10">{it.desc}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

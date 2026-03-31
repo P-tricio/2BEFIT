@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import InPersonTraining from "./components/InPersonTraining";
 import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
 import "./App.css";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
         </Routes>
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   );
 }

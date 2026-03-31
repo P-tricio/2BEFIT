@@ -1,61 +1,102 @@
 import { useTranslation } from "../i18n/LanguageProvider";
+import { motion } from "framer-motion";
+import { MessageCircle, Mail } from "lucide-react";
 
 const Contact = () => {
   const { t } = useTranslation();
+  const data = t("contact");
   const phoneNumber = "+34667895697";
-  const message = t("contact.whatsapp_message");
+  const message = data.whatsapp_message || "Hola, me interesa el programa 2BEFIT";
 
   const handleWhatsAppClick = () => {
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(whatsappUrl, "_blank");
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
 
-  const data = t("contact");
-
   return (
-    <section id="contacto" className="contact-section">
-      <div className="container">
-        <div className="contact-content">
-          <span className="pre-contact">{data.pre}</span>
-          <h3>{data.title}</h3>
-          <p>{data.paragraph}</p>
-          <div className="contact-buttons">
-            <button
-              onClick={handleWhatsAppClick}
-              className="btn contact-whatsapp"
+    <section id="contacto" className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      {/* Decorative background blurs */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 blur-3xl rounded-full pointer-events-none" />
+
+      <div className="max-w-3xl mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-br from-[#1b4332] to-[#0f2818] rounded-3xl p-12 md:p-16 text-center shadow-2xl relative overflow-hidden border border-emerald-500/20"
+        >
+          {/* Animated gradient orbs */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+
+          {/* Decorative rings */}
+          <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full border border-white/10" />
+          <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full border border-white/10" />
+          <div className="absolute -bottom-16 -left-16 w-40 h-40 rounded-full border border-white/10" />
+
+          <div className="relative z-20">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-block bg-gradient-to-r from-emerald-500 to-emerald-400 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6 shadow-lg"
             >
-              <svg
-                className="whatsapp-icon"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 13.9 2.5 15.7 3.4 17.2L2 22L6.9 20.6C8.4 21.5 10.1 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.6 15.5C16.3 16.3 15.2 17 14.4 17.1C13.6 17.2 12.9 17 12 16.6C8.8 15.1 7 12 6.9 11.8C6.8 11.6 5.8 10.2 5.8 8.7C5.8 7.2 6.5 6.5 6.8 6.2C7.1 5.9 7.5 5.8 7.7 5.8C7.9 5.8 8.1 5.8 8.3 5.8C8.5 5.8 8.8 5.7 9.1 6.4C9.4 7.1 10.1 8.6 10.2 8.7C10.3 8.8 10.3 9 10.2 9.2C9.7 10.2 9.2 10.1 9.6 10.8C10.6 12.6 11.8 13.3 13.5 14.1C13.8 14.2 14 14.2 14.1 14C14.2 13.8 14.9 13 15.2 12.7C15.5 12.4 15.8 12.4 16.1 12.5C16.4 12.6 17.9 13.3 18.2 13.5C18.5 13.7 18.7 13.7 18.8 13.9C18.9 14.1 18.9 14.8 18.6 15.6L16.6 15.5Z" />
-              </svg>
-              {data.whatsapp_cta}
-            </button>
-            <a
-              href="mailto:patricioescabe@gmail.com?subject=Interesado en 2BEFIT"
-              className="btn contact-email"
+              {data.pre || "Contáctanos"}
+            </motion.span>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl font-black text-white mb-5 leading-tight"
+              style={{
+                fontFamily: "'Outfit', 'Inter', sans-serif",
+              }}
             >
-              <svg
-                className="email-icon"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
+              {data.title || "¿Listo para transformar tu vida?"}
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-emerald-100/80 text-base mb-12 max-w-lg mx-auto leading-relaxed"
+            >
+              {data.paragraph}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center mt-8"
+            >
+              <motion.button
+                onClick={handleWhatsAppClick}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-8 py-5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl text-base group"
               >
-                <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" />
-              </svg>
-              {data.email_cta}
-            </a>
+                <MessageCircle size={20} className="group-hover:scale-110 transition-transform" />
+                {data.whatsapp_cta || "Escríbenos por WhatsApp"}
+              </motion.button>
+
+              <motion.a
+                href="mailto:patricioescabe@gmail.com?subject=Interesado en 2BEFIT"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center gap-3 bg-white/15 hover:bg-white/25 text-white font-bold px-8 py-5 rounded-full border border-white/30 backdrop-blur-sm transition-all duration-300 shadow-lg hover:shadow-xl text-base group"
+              >
+                <Mail size={20} className="group-hover:scale-110 transition-transform" />
+                {data.email_cta || "Envíanos un email"}
+              </motion.a>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
