@@ -35,7 +35,7 @@
     <link rel="shortcut icon" href="/assets/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2BEFIT - Entrenamiento Personal Online</title>
+    <title>2BEFIT | Entrenador Personal Online & Presencial Marbella, Estepona y Costa del Sol</title>
     <!-- Preconnect for font performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,10 +46,147 @@
     />
     <meta
       name="description"
-      content="Entrenamiento personal online personalizado. Transforma tu cuerpo y mente con 2BEFIT."
+      content="Entrenamiento personal y nutrición 100% personalizados. Sesiones presenciales en Marbella, Estepona y Costa del Sol (ES/EN) y coaching online global con 2BEFIT."
     />
+    <link rel="canonical" href="https://2befit.vercel.app/" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Multilingual Hreflang Tags -->
+    <link rel="alternate" hreflang="es" href="https://2befit.vercel.app/" />
+    <link rel="alternate" hreflang="en" href="https://2befit.vercel.app/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://2befit.vercel.app/" />
+
+    <!-- Open Graph (Facebook / WhatsApp / LinkedIn / Instagram) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:site_name" content="2BEFIT" />
+    <meta property="og:title" content="2BEFIT | Personal Trainer & Online Fitness Coaching (Marbella, Estepona & Online)" />
+    <meta property="og:description" content="Customized training & nutrition plans. In-person 1-on-1 personal training in Marbella, Estepona & Costa del Sol, and global online coaching." />
+    <meta property="og:image" content="https://2befit.vercel.app/assets/favicon.png" />
+    <meta property="og:url" content="https://2befit.vercel.app/" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="2BEFIT | Entrenador Personal & Coaching Online" />
+    <meta name="twitter:description" content="Transforma tu cuerpo y mente con entrenamiento y nutrición a medida. Presencial en Marbella, Estepona y Costa del Sol, y online." />
+    <meta name="twitter:image" content="https://2befit.vercel.app/assets/favicon.png" />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["SportsActivityLocation", "HealthAndBeautyBusiness", "ProfessionalService"],
+          "@id": "https://2befit.vercel.app/#business",
+          "name": "2BEFIT - Personal Training & Online Coaching",
+          "url": "https://2befit.vercel.app/",
+          "logo": "https://2befit.vercel.app/assets/favicon.png",
+          "image": "https://2befit.vercel.app/assets/favicon.png",
+          "description": "Entrenamiento personal y asesoramiento nutricional personalizado. Sesiones presenciales en Marbella, Estepona, San Pedro de Alcántara y Costa del Sol, y coaching online a nivel global.",
+          "priceRange": "€€",
+          "email": "patricioescabe@gmail.com",
+          "knowsLanguage": ["Spanish", "English"],
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Marbella"
+            },
+            {
+              "@type": "City",
+              "name": "Estepona"
+            },
+            {
+              "@type": "City",
+              "name": "San Pedro de Alcántara"
+            },
+            {
+              "@type": "City",
+              "name": "Málaga"
+            },
+            {
+              "@type": "AdministrativeArea",
+              "name": "Costa del Sol"
+            },
+            {
+              "@type": "Country",
+              "name": "Spain"
+            }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios 2BEFIT",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "1-on-1 In-Person Personal Training (Marbella, Estepona & Costa del Sol)",
+                  "description": "Entrenamiento presencial personalizado en Marbella, Estepona y Costa del Sol con corrección técnica presencial en español o inglés."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Online Personal Training & Nutrition Coaching",
+                  "description": "Programa mensual y semestral personalizado con app móvil de entrenamiento, pautas de nutrición y seguimiento semanal continuo."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://2befit.vercel.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Ofrecéis entrenamiento personal presencial en Marbella, Estepona y la Costa del Sol?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, realizamos sesiones presenciales individuales y en pareja en Marbella, Estepona, San Pedro de Alcántara y toda la Costa del Sol, tanto en español como en inglés."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer private in-person personal training in Marbella and Estepona?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! We provide private 1-on-1 and small group personal training sessions across Marbella, Estepona, San Pedro de Alcántara, and the Costa del Sol, completely in English."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo funciona el seguimiento del entrenamiento online de 2BEFIT?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Diseñamos un plan de rutinas y guía nutricional a través de nuestra app exclusiva. Realizamos revisiones semanales de progreso y ajustes continuos para maximizar tus resultados."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Necesito experiencia previa para empezar a entrenar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Adaptamos el entrenamiento y la nutrición a tu nivel, tanto si eres principiante como si ya tienes experiencia entrenando."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
+    <noscript>
+      <header>
+        <h1>2BEFIT - Entrenador Personal Online & Presencial Marbella, Estepona y Costa del Sol</h1>
+        <p>Planes de entrenamiento y nutrición 100% personalizados online y presencial en Marbella, Estepona y Costa del Sol (Español e Inglés).</p>
+      </header>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

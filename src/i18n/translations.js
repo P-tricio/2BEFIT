@@ -93,7 +93,7 @@ export const translations = {
           "Nutritional guide by portions or macros",
           "Weekly check-in via app",
           "Progress review and adjustments",
-          "Access to the Harbiz app",
+          "Access to our exclusive 2BEFITHUB PWA",
         ],
         cta: "I want to start with BASIC",
       },
@@ -225,6 +225,10 @@ export const translations = {
           a: "Each week we review progress, resolve doubts and adjust your plan. In TOP you also have a biweekly video call.",
         },
         {
+          q: "Do you offer in-person personal training in Marbella and Estepona?",
+          a: "Yes! We provide private 1-on-1 and partner personal training sessions across Marbella, Estepona, San Pedro de Alcántara, and the Costa del Sol, conducted fully in English.",
+        },
+        {
           q: "How do I hire the service?",
           a: "You can start from the website by clicking on 'I want to start!' to send us a WhatsApp message. You can also contact via Instagram if it's more convenient.",
         },
@@ -260,20 +264,20 @@ export const translations = {
       message_short: "Hello! I'd like more information about 2BEFIT",
     },
     in_person_page: {
-      location_hook: "Prefer in-person training?",
-      title: "Do you live in Costa del Sol? We can train in person!",
+      location_hook: "In-Person Training (Marbella, Estepona & Costa del Sol)",
+      title: "Looking for a personal trainer in Marbella, Estepona or Costa del Sol?",
       description:
-        "We also offer in-person personal training sessions for those seeking direct technical correction and extra motivation.",
+        "We offer private 1-on-1 and small group personal training sessions in Marbella, Estepona, San Pedro de Alcántara and across the Costa del Sol. Fully adapted in English for expats and international residents.",
       one_on_one: {
-        title: "1-on-1 training",
-        desc: "Fully personalized sessions where all attention is on you. Instant technique correction and real-time training adaptation.",
+        title: "1-on-1 Private Training",
+        desc: "Fully personalized in-person sessions with 100% focus on you. Real-time technique correction, biomechanical optimization and instant progression.",
       },
       small_groups: {
-        title: "Small groups",
-        desc: "Train with friends or partners with similar goals. Keep motivation high and share the experience.",
+        title: "Small Groups & Couples",
+        desc: "Train with friends or your partner with shared goals. Keep motivation high and share the journey together.",
       },
-      cta: "Check Availability",
-      whatsapp_message: "Hello! I live in Costa Del Sol, could we train in person?",
+      cta: "Check Availability in Marbella & Estepona",
+      whatsapp_message: "Hello! I'm looking for in-person personal training in Marbella / Estepona with 2BEFIT.",
     },
   },
   es: {
@@ -368,7 +372,7 @@ export const translations = {
           "Guía nutricional por porciones o macros",
           "Check-in semanal vía app",
           "Revisión de progresos y ajustes",
-          "Acceso a la app Harbiz",
+          "Acceso a nuestra PWA exclusiva 2BEFITHUB",
         ],
         cta: "Quiero empezar con BASIC",
       },
@@ -500,6 +504,10 @@ export const translations = {
           a: "Cada semana revisamos tu progreso, resolvemos dudas y ajustamos tu plan. En el plan TOP además tienes videollamada quincenal para comentar tus avances.",
         },
         {
+          q: "¿Ofrecéis entrenamiento presencial en Marbella, Estepona y la Costa del Sol?",
+          a: "¡Sí! Realizamos sesiones presenciales 1 a 1 y en pareja en Marbella, Estepona, San Pedro de Alcántara y toda la Costa del Sol, tanto en español como en inglés.",
+        },
+        {
           q: "¿Cómo contrato el servicio?",
           a: 'Puedes empezar desde esta web pulsando en "¡Quiero empezar!" para enviarnos un mensaje por WhatsApp. Puedes contactar a través de Instagram si te resulta más cómodo.',
         },
@@ -535,20 +543,20 @@ export const translations = {
       message_short: "¡Hola! Me gustaría obtener más información sobre 2BEFIT",
     },
     in_person_page: {
-      location_hook: "¿Prefieres entrenamiento presencial?",
-      title: "¿Vives en la Costa del Sol? ¡Podemos entrenar en persona!",
+      location_hook: "Entrenamiento Presencial (Marbella, Estepona y Costa del Sol)",
+      title: "¿Vives en Marbella, Estepona o la Costa del Sol? ¡Entrenamos en persona!",
       description:
-        "También ofrecemos sesiones de entrenamiento personal presencial para aquellos que buscan una corrección técnica directa y motivación extra.",
+        "Ofrecemos sesiones de entrenamiento personal presencial (1 a 1 y en pareja) en Marbella, Estepona, San Pedro de Alcántara y alrededores para maximizar tu técnica y motivación.",
       one_on_one: {
         title: "Entrenamiento 1 a 1",
-        desc: "Sesiones totalmente personalizadas donde toda la atención está en ti. Corrección de técnica al instante y adaptación del entrenamiento en tiempo real.",
+        desc: "Sesiones totalmente individualizadas con atención exclusiva. Corrección técnica al instante, control biomecánico y adaptación en tiempo real.",
       },
       small_groups: {
-        title: "Grupos reducidos",
-        desc: "Entrena con amigos o compañeros con objetivos similares. Mantén la motivación alta y comparte la experiencia.",
+        title: "Grupos reducidos y parejas",
+        desc: "Entrena con amigos o en pareja con objetivos comunes. Mantén la motivación alta y comparte la experiencia.",
       },
-      cta: "Consultar Disponibilidad",
-      whatsapp_message: "¡Hola! Vivo en la Costa Del Sol, ¿podríamos entrenar en persona?",
+      cta: "Consultar Disponibilidad en Marbella y Estepona",
+      whatsapp_message: "¡Hola! Me gustaría información sobre entrenamiento presencial en Marbella / Estepona con 2BEFIT.",
     },
   },
 };
