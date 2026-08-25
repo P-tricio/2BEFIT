@@ -5,12 +5,12 @@ import { MapPin, User, Users, MessageCircle } from "lucide-react";
 
 const InPersonTraining = () => {
   const { t } = useTranslation();
-  const phoneNumber = "+34667895697";
+  const phoneNumber = "34667895697";
   const message = t("in_person_page.whatsapp_message");
 
   const handleWhatsAppClick = () => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (

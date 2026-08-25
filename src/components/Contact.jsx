@@ -5,11 +5,11 @@ import { MessageCircle, Mail } from "lucide-react";
 const Contact = () => {
   const { t } = useTranslation();
   const data = t("contact");
-  const phoneNumber = "+34667895697";
+  const phoneNumber = "34667895697";
   const message = data.whatsapp_message || "Hola, me interesa el programa 2BEFIT";
 
   const handleWhatsAppClick = () => {
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
   };
 
   return (
