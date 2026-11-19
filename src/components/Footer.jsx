@@ -1,5 +1,6 @@
 import { useTranslation } from "../i18n/LanguageProvider";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -31,7 +32,10 @@ const Footer = () => {
               className="h-10 object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
             />
             <p className="text-slate-400 text-sm max-w-xs text-center lg:text-left leading-relaxed">
-              Transformando vidas a través del fitness y el compromiso personal
+              {t("footer.tagline") || "Transformando vidas a través del fitness y el compromiso personal"}
+            </p>
+            <p className="text-slate-500 text-xs max-w-sm text-center lg:text-left leading-relaxed">
+              {t("footer.local_nap") || "Marbella · San Pedro de Alcántara · Estepona (Costa del Sol) & Coaching Online · patricio@2befit.online · +34 667 895 697"}
             </p>
           </motion.div>
 
@@ -44,9 +48,9 @@ const Footer = () => {
             className="flex flex-wrap justify-center gap-8"
           >
             {[
-              { href: "#planes", label: t("footer.plans") },
-              { href: "#contacto", label: t("footer.contact") },
-              { href: "#faq", label: t("footer.faq") },
+              { href: "/#planes", label: t("footer.plans") },
+              { href: "/#contacto", label: t("footer.contact") },
+              { href: "/#faq", label: t("footer.faq") },
             ].map((link, i) => (
               <motion.a
                 key={i}
@@ -57,6 +61,12 @@ const Footer = () => {
                 {link.label}
               </motion.a>
             ))}
+            <Link
+              to="/entrenamiento-presencial"
+              className="text-slate-400 hover:text-emerald-400 text-sm font-medium transition-colors"
+            >
+              {t("nav.in_person") || "Presencial Costa del Sol"}
+            </Link>
           </motion.div>
 
           {/* Social + copyright */}

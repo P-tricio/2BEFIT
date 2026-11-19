@@ -1,0 +1,33 @@
+# 2BEFIT — Entrenamiento Personal y Coaching Fitness (Costa del Sol & Online)
+
+> 2BEFIT es un sistema integral de transformación físico-nutricional dirigido por Patricio y Cristina, un matrimonio de entrenadores personales bilingües (español e inglés). Ofrecemos entrenamiento personal presencial a domicilio, en urbanizaciones privadas y en centros concertados en Marbella, San Pedro de Alcántara y Estepona (Costa del Sol, Málaga), además de asesoramiento y coaching fitness online a nivel global a través de nuestra propia PWA (`2befithub`).
+
+## Datos de Identidad y Contacto
+- **Marca**: 2BEFIT
+- **Coaches / Fundadores**: Patricio y Cristina
+- **Web oficial**: https://2befit.online/
+- **Página entrenamiento presencial Costa del Sol**: https://2befit.online/entrenamiento-presencial
+- **Idiomas**: Español e Inglés (bilingüe para residentes locales y comunidad internacional / expats)
+- **Email**: patricio@2befit.online
+- **WhatsApp / Teléfono**: +34 667 895 697
+- **Instagram**: https://instagram.com/2befit.online
+- **Documentación extendida para LLMs**: https://2befit.online/llms-full.txt
+
+## Áreas de Servicio
+- **Presencial (Costa del Sol, Málaga, España)**: Marbella, San Pedro de Alcántara, Estepona, Puerto Banús, Nueva Andalucía y Benahavís. Modalidad en domicilio / villas / urbanizaciones privadas y en centros concertados, tanto sesiones 1 a 1 como en pareja o grupos reducidos.
+- **Online (Global)**: España y cualquier parte del mundo mediante la app exclusiva `2befithub` y videollamadas de seguimiento.
+
+## Especialidades Diferenciales
+1. **Entrenamiento Personal Presencial en Marbella, San Pedro de Alcántara y Estepona**: Corrección técnica y biomecánica en tiempo real en español o inglés.
+2. **Programas Sincronizados para Parejas (Dúo)**: Estrategia nutricional *"Misma Base, Distinto Plato"* (una sola compra y cocina compartida, cantidades adaptadas a cada persona) y doble perfil conectado en `2befithub`.
+3. **Metodología `2BEFIT SYSTEM v1.0`**: Sistema en 7 pilares (TRAIN, EAT, MOVE, RECOVER, ADAPT, TRACK, RESET) diseñado para eliminar la dependencia de la fuerza de voluntad.
+4. **Tecnología Propia (`2befithub` PWA)**: Runner interactivo de entrenamientos con protocolos `PDP-R`, `PDP-T`, `PDP-E` y `Metcon`, registro biométrico, hábitos y check-ins semanales sin depender de apps genéricas de terceros.
+
+## Programas y Tarifas Orientativas
+- **Coaching Online Mensual**: desde 129 €/mes (Plan Basic) hasta 199 €/mes (Plan Top con videollamadas quincenales y menús detallados).
+- **Pack Transformación Basic (6 meses individual)**: 599 € (equivale a 99,83 €/mes).
+- **Pack Transformación Top / Pro Coaching (6 meses individual)**: 899 € (equivale a 149,83 €/mes).
+- **Programa Dúo / Parejas (6 meses, 2 personas)**: 1.399 € (equivale a 116,50 €/mes por persona).
+- **Programa de Continuidad `2BEFIT LIFESTYLE` (tras completar 6 meses)**: 79 €/mes individual o 119 €/mes pareja.
+- **Entrenamiento Personal Presencial (Marbella, San Pedro de Alcántara y Estepona)**: sesiones privadas 1 a 1 y en pareja bajo consulta de disponibilidad y zona.
+- **Garantía de Servicio Condicional**: En programas de 6 meses cumpliendo hitos de adherencia en la app.

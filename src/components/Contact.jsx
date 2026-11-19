@@ -86,7 +86,7 @@ const Contact = () => {
               </motion.button>
 
               <motion.a
-                href="mailto:patricioescabe@gmail.com?subject=Interesado en 2BEFIT"
+                href="mailto:patricio@2befit.online?subject=Interesado%20en%202BEFIT"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center justify-center gap-3 bg-white/15 hover:bg-white/25 text-white font-bold px-8 py-5 rounded-full border border-white/30 backdrop-blur-sm transition-all duration-300 shadow-lg hover:shadow-xl text-base group"

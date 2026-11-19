@@ -9,7 +9,6 @@ import InPersonTraining from "./InPersonTraining";
 import Instagram from "./Instagram";
 import FAQ from "./FAQ";
 import Contact from "./Contact";
-import FloatingWhatsApp from "./FloatingWhatsApp";
 
 const Home = () => {
   return (
@@ -24,7 +23,6 @@ const Home = () => {
       <Instagram />
       <FAQ />
       <Contact />
-      <FloatingWhatsApp />
     </>
   );
 };

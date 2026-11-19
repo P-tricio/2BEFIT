@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-6">
-              Premium Fitness Experience
+              {t("hero.pre_title") || "Entrenamiento Online y Presencial · Costa del Sol"}
             </span>
             <h1
               className="font-black tracking-tight text-white mb-6 leading-[1.05]"
@@ -71,16 +71,16 @@ const Hero = () => {
                 href="#testimonios"
                 className="px-10 py-6 bg-white/5 hover:bg-white/10 text-white font-bold rounded-2xl border border-white/10 backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95"
               >
-                Ver testimonios
+                {t("hero.cta_testimonials") || "Ver testimonios"}
               </a>
             </div>
 
             {/* Floating stats */}
             <div className="flex justify-center lg:justify-start gap-14 mt-16 pt-10 border-t border-white/10 text-white/80">
               {[
-                { val: "200+", label: "Clientes" },
-                { val: "+9", label: "Años Experiencia" },
-                { val: "24/7", label: "Soporte" },
+                { val: "200+", label: t("hero.stat_clients") || "Clientes" },
+                { val: "+9", label: t("hero.stat_success") || "Años Experiencia" },
+                { val: "ES / EN", label: t("hero.stat_support") || "Online & Costa del Sol" },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="text-white font-black text-3xl mb-1">{s.val}</div>

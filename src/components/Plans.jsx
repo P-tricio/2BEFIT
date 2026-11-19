@@ -7,7 +7,9 @@ const Plans = () => {
   const data = t("plans");
   const basic = data.basic;
   const top = data.top;
+  const packBasic = data.pack?.basic;
   const packTop = data.pack?.top;
+  const packDuo = data.pack?.duo;
 
   // CSS for animated gradient badge
   const badgeStyles = `
@@ -21,34 +23,35 @@ const Plans = () => {
   `;
 
   const cards = [
-    {
-      name: basic.name,
-      price: basic.price,
-      period: "/mes",
-      desc: "Ideal para comenzar con acompañamiento online.",
-      features: basic.bullets || [],
-      cta: basic.cta,
+    packBasic && {
+      name: packBasic.name,
+      price: packBasic.price_total,
+      period: data.period_6m || " / 6 meses",
+      badge: packBasic.badge,
+      desc: packBasic.per_month || "Tu transformación individual garantizada.",
+      features: packBasic.bullets || [],
+      cta: packBasic.cta,
       featured: false,
-    },
-    {
-      name: top.name,
-      price: top.price,
-      period: "/mes",
-      badge: data.popular_badge || "Más Popular",
-      desc: "El plan más completo para maximizar resultados.",
-      features: top.bullets || [],
-      cta: top.cta,
-      featured: true,
     },
     packTop && {
       name: packTop.name,
       price: packTop.price_total,
-      period: "",
-      badge: "Pack 6 Meses",
-      desc: packTop.per_month || "Ahorra con el pack semestral.",
+      period: data.period_6m || " / 6 meses",
+      badge: packTop.badge || "Pro Coaching Individual",
+      desc: packTop.per_month || "Máximo seguimiento y análisis biomecánico.",
       features: packTop.bullets || [],
       cta: packTop.cta,
       featured: false,
+    },
+    packDuo && {
+      name: packDuo.name,
+      price: packDuo.price_total,
+      period: data.period_6m_duo || " / 6 meses (2 pers.)",
+      badge: packDuo.badge || "Oferta Parejas ⭐",
+      desc: packDuo.per_month || "Misma base, distinto plato. El favorito.",
+      features: packDuo.bullets || [],
+      cta: packDuo.cta,
+      featured: true,
     },
   ].filter(Boolean);
 
@@ -70,7 +73,7 @@ const Plans = () => {
             {data.title || "Nuestros Planes"}
           </motion.h2>
           <p className="text-slate-500 text-base max-w-lg mx-auto">
-            Un acompañamiento a medida. Sin ataduras, solo resultados tangibles.
+            {data.subtitle || "Un acompañamiento a medida. Sin ataduras, solo resultados tangibles."}
           </p>
         </div>
 
@@ -190,6 +193,20 @@ const Plans = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Nota aclaratoria mensual & Garantía */}
+        <div className="text-center mt-12 space-y-2">
+          <p className="text-slate-600 text-sm font-medium">
+            {data.monthly_note || "¿Prefieres acompañamiento mensual sin pack? Disponemos de opción individual desde 129€/mes."}
+          </p>
+          <p className="text-slate-500 text-xs">
+            {data.guarantee_prefix || "Todos nuestros programas de 6 meses cuentan con nuestra "}
+            <span className="text-emerald-700 font-bold">
+              {data.guarantee_badge || "Garantía de Servicio Condicional"}
+            </span>
+            {data.guarantee_suffix || ": resultados o seguimos contigo sin coste."}
+          </p>
         </div>
       </div>
       <style dangerouslySetInnerHTML={{ __html: badgeStyles }} />
