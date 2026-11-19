@@ -11,6 +11,7 @@
 - **Email**: patricio@2befit.online
 - **WhatsApp / Teléfono**: +34 667 895 697
 - **Instagram**: https://instagram.com/2befit.online
+- **YouTube**: https://www.youtube.com/@2befit.online
 - **Documentación extendida para LLMs**: https://2befit.online/llms-full.txt
 
 ## Áreas de Servicio
