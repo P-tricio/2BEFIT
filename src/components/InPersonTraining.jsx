@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useTranslation } from "../i18n/LanguageProvider";
-import { MapPin, User, Users, MessageCircle, Home, Building2, Award } from "lucide-react";
+import { MapPin, User, Users, MessageCircle, Home, Building2, Award, ArrowRight } from "lucide-react";
 
 const InPersonTraining = () => {
   const { t } = useTranslation();
@@ -165,7 +166,7 @@ const InPersonTraining = () => {
           </div>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
           {Array.isArray(zones) &&
             zones.map((zone) => (
               <span
@@ -176,6 +177,23 @@ const InPersonTraining = () => {
                 {zone}
               </span>
             ))}
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-10 text-sm">
+          <Link
+            to="/entrenador-personal-marbella"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-slate-200 hover:border-emerald-300 text-slate-700 hover:text-[#1b4332] font-semibold shadow-sm transition-colors"
+          >
+            Entrenador Personal Marbella
+            <ArrowRight size={14} />
+          </Link>
+          <Link
+            to="/entrenador-personal-estepona"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white border border-slate-200 hover:border-emerald-300 text-slate-700 hover:text-[#1b4332] font-semibold shadow-sm transition-colors"
+          >
+            Entrenador Personal Estepona
+            <ArrowRight size={14} />
+          </Link>
         </div>
 
         {/* CTA */}

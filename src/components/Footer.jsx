@@ -67,6 +67,18 @@ const Footer = () => {
             >
               {t("nav.in_person") || "Presencial Costa del Sol"}
             </Link>
+            <Link
+              to="/entrenador-personal-marbella"
+              className="text-slate-400 hover:text-emerald-400 text-sm font-medium transition-colors"
+            >
+              Marbella
+            </Link>
+            <Link
+              to="/entrenador-personal-estepona"
+              className="text-slate-400 hover:text-emerald-400 text-sm font-medium transition-colors"
+            >
+              Estepona
+            </Link>
           </motion.div>
 
           {/* Social + copyright */}
