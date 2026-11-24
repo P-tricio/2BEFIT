@@ -260,7 +260,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* Editorial Quote */}
-                  <blockquote className="text-lg sm:text-xl leading-relaxed text-slate-800 font-normal mb-8 min-h-[5.5rem]">
+                  <blockquote className="text-base sm:text-lg leading-relaxed text-slate-800 font-normal mb-8 min-h-[5.5rem] whitespace-pre-line">
                     "{currentItem.text}"
                   </blockquote>
 
