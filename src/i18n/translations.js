@@ -58,6 +58,7 @@ export const translations = {
     },
     how: {
       title: "This is how easy it is to start",
+      subtitle: "A clear, practical 4-step process built around your schedule",
       steps: [
         {
           title: "Free initial consultation",
@@ -445,6 +446,7 @@ export const translations = {
     },
     how: {
       title: "Así de fácil es empezar",
+      subtitle: "Un proceso simple y efectivo en 4 pasos adaptado a tu rutina",
       steps: [
         {
           title: "Consulta inicial gratuita",

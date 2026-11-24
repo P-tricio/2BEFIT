@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+// eslint-disable-next-line no-unused-vars -- Used as JSX namespace (<motion.*>)
 import { motion } from "framer-motion";
 import { useTranslation } from "../i18n/LanguageProvider";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -52,7 +53,7 @@ const Header = () => {
         </button>
 
         {/* Desktop nav — centered */}
-        <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
           {[
             { label: t("nav.why_us"), href: getLink("#problema") },
             { label: t("nav.benefits"), href: getLink("#beneficios") },
@@ -66,8 +67,8 @@ const Header = () => {
               key={item.href}
               href={item.href}
               whileHover={{ color: scrolled ? "#2d6a4f" : "#ffffff" }}
-              className={`text-sm font-medium transition-colors duration-150 ${
-                scrolled ? "text-slate-600 hover:text-[#2d6a4f]" : "text-white hover:text-white/80"
+              className={`whitespace-nowrap text-sm font-medium transition-colors duration-150 ${
+                scrolled ? "text-slate-700 hover:text-[#2d6a4f]" : "text-white hover:text-white/80"
               }`}
             >
               {item.label}

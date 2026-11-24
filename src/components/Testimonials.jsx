@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
-import { useTranslation } from "../i18n/LanguageProvider";
 // eslint-disable-next-line no-unused-vars -- Used as JSX namespace (<motion.*>)
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, ExternalLink } from "lucide-react";
+import { useTranslation } from "../i18n/LanguageProvider";
 
 const GOOGLE_REVIEW_URL = "https://g.page/r/CeQHaJ04PpRqEBM/review";
-const GOOGLE_MAPS_URL = "https://www.google.com/maps/place/?q=place_id:ChIJi2Lo99grcw0R5AdonTg-lGo";
+const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/place/?q=place_id:ChIJi2Lo99grcw0R5AdonTg-lGo";
 
 const AVATAR_COLORS = [
-  { bg: "#fde68a", text: "#92400e" },
-  { bg: "#bbf7d0", text: "#065f46" },
-  { bg: "#bfdbfe", text: "#1e40af" },
-  { bg: "#e9d5ff", text: "#6b21a8" },
-  { bg: "#fed7aa", text: "#9a3412" },
+  { bg: "#1b4332", text: "#ffffff" },
+  { bg: "#2d6a4f", text: "#ffffff" },
+  { bg: "#1e3a5f", text: "#ffffff" },
+  { bg: "#4c1d95", text: "#ffffff" },
+  { bg: "#7c2d12", text: "#ffffff" },
 ];
 
 const StarRow = ({ count = 5 }) => (
@@ -20,8 +21,8 @@ const StarRow = ({ count = 5 }) => (
     {[...Array(5)].map((_, i) => (
       <svg
         key={i}
-        width="16"
-        height="16"
+        width="17"
+        height="17"
         viewBox="0 0 24 24"
         fill={i < Math.round(count) ? "#f59e0b" : "#e2e8f0"}
       >
@@ -33,10 +34,22 @@ const StarRow = ({ count = 5 }) => (
 
 const GoogleGlyph = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
-    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z" />
-    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24z" />
-    <path fill="#FBBC05" d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14z" />
-    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96z" />
+    <path
+      fill="#4285F4"
+      d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
+    />
+    <path
+      fill="#34A853"
+      d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.11-6.72-4.96H1.29v3.14C3.26 21.3 7.31 24 12 24z"
+    />
+    <path
+      fill="#FBBC05"
+      d="M5.28 14.24c-.24-.72-.38-1.49-.38-2.24s.14-1.52.38-2.24V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.99-3.14z"
+    />
+    <path
+      fill="#EA4335"
+      d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.99 3.14c.95-2.85 3.6-4.96 6.72-4.96z"
+    />
   </svg>
 );
 
@@ -55,15 +68,15 @@ const ReviewAvatar = ({ photoUri, initials, bgColor, className }) => {
         referrerPolicy="no-referrer"
         loading="lazy"
         onError={() => setImgFailed(true)}
-        className={`${className} object-cover bg-slate-100`}
+        className={`${className} rounded-full object-cover bg-white`}
       />
     );
   }
 
   return (
     <div
-      className={`${className} flex items-center justify-center font-bold text-white`}
-      style={{ background: `linear-gradient(135deg, ${bgColor} 0%, ${bgColor}dd 100%)` }}
+      className={`${className} rounded-full flex items-center justify-center font-bold text-white`}
+      style={{ backgroundColor: bgColor }}
     >
       {initials}
     </div>
@@ -71,7 +84,15 @@ const ReviewAvatar = ({ photoUri, initials, bgColor, className }) => {
 };
 
 const getInitials = (name) =>
-  name?.split(" ").filter(Boolean).map((w) => w[0]).slice(0, 2).join("").toUpperCase() || "CL";
+  name
+    ?.split(" ")
+    .filter(Boolean)
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase() || "CL";
+
+const getShortName = (name) => name?.split(" ").filter(Boolean)[0] || "Cliente";
 
 const Testimonials = () => {
   const { t, lang } = useTranslation();
@@ -101,7 +122,9 @@ const Testimonials = () => {
             text: rev.text,
             cite: rev.author,
             photoUri: rev.photoUri,
+            authorUri: rev.authorUri,
             rating: rev.rating || 5,
+            relativeTime: rev.relativeTime || "",
             role: rev.relativeTime
               ? `${data.google_verified_role || "Reseña verificada en Google"} · ${rev.relativeTime}`
               : data.google_verified_role || "Reseña verificada en Google",
@@ -138,22 +161,26 @@ const Testimonials = () => {
       ? googleState.rating.toFixed(1).replace(".", lang === "en" ? "." : ",")
       : null;
 
-  return (
-    <section id="testimonios" className="bg-gradient-to-b from-slate-50 to-white py-16 md:py-24 relative overflow-hidden">
-      {/* Decorative blur elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-emerald-500/5 blur-3xl rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/5 blur-3xl rounded-full pointer-events-none" />
+  const currentItem = items[safeActive];
+  const currentInitials = getInitials(currentItem?.cite);
+  const currentPalette = AVATAR_COLORS[safeActive % AVATAR_COLORS.length];
 
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 relative z-10">
-        {/* Title */}
+  return (
+    <section
+      id="testimonios"
+      className="bg-slate-50/90 py-16 md:py-24 relative overflow-hidden border-b border-slate-100"
+    >
+      <div className="max-w-5xl mx-auto px-6 lg:px-10 relative z-10">
+        {/* Title & Google Trust Bar */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          viewport={{ once: true, amount: "some" }}
+          transition={{ duration: 0.45 }}
+          className="text-center mb-12"
         >
           <h2
-            className="font-black text-slate-900 mb-4"
+            className="font-black text-slate-900 mb-3"
             style={{
               fontFamily: "'Outfit', 'Inter', sans-serif",
               fontSize: "clamp(1.7rem, 3.5vw, 2.4rem)",
@@ -161,279 +188,158 @@ const Testimonials = () => {
           >
             {data.title || "Lo que dicen nuestros clientes"}
           </h2>
-          <p className="text-slate-500 text-base max-w-2xl mx-auto">
+          <p className="text-slate-600 text-base max-w-2xl mx-auto">
             {data.subtitle || "Historias reales de transformación y éxito con 2BEFIT"}
           </p>
 
-          <div className="mt-5 inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs sm:text-sm shadow-sm">
-            <span className="inline-flex items-center gap-2 font-semibold text-slate-800">
+          <div className="mt-5 inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-2xl sm:rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs sm:text-sm shadow-sm">
+            <span className="inline-flex items-center gap-2 font-bold text-slate-900">
               <GoogleGlyph />
               {formattedRating && googleState.userRatingCount ? (
-                <>
-                  <span>{formattedRating} ★</span>
-                  <span className="text-slate-300">·</span>
-                  <span>
-                    {googleState.userRatingCount} {data.reviews_word || "reseñas"}
-                  </span>
-                </>
+                <span>
+                  {formattedRating} ★ · {googleState.userRatingCount}{" "}
+                  {data.reviews_word || "reseñas"}
+                </span>
               ) : (
                 <span>{data.google_badge || "Reseñas en Google"}</span>
               )}
             </span>
-            <span className="text-slate-300">|</span>
-            <a
-              href={googleState.placeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-medium text-[#2d6a4f] hover:underline"
-            >
-              {data.view_on_google || "Ver en Google"}
-              <ExternalLink size={13} />
-            </a>
-            <span className="text-slate-300">·</span>
-            <a
-              href={googleState.reviewUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-slate-600 hover:text-slate-900 hover:underline"
-            >
-              {data.leave_review || "Dejar reseña"}
-            </a>
+
+            <span className="hidden sm:inline-block h-3.5 w-px bg-slate-200" aria-hidden="true" />
+
+            <span className="inline-flex items-center gap-3">
+              <a
+                href={googleState.placeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-semibold text-[#1b4332] hover:text-[#2d6a4f] hover:underline"
+              >
+                {data.view_on_google || "Ver en Google"}
+                <ExternalLink size={13} />
+              </a>
+              <span className="text-slate-300" aria-hidden="true">
+                |
+              </span>
+              <a
+                href={googleState.reviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-slate-600 hover:text-slate-950 hover:underline"
+              >
+                {data.leave_review || "Dejar reseña"}
+              </a>
+            </span>
           </div>
         </motion.div>
 
-        {/* Desktop: Premium carousel layout */}
-        <div className="hidden md:block">
-          <AnimatePresence mode="wait">
-            {items[safeActive] && (() => {
-              const item = items[safeActive];
-              const initials = getInitials(item.cite);
-              const ac = AVATAR_COLORS[safeActive % AVATAR_COLORS.length];
-              return (
+        {/* Single Editorial Review Card */}
+        {currentItem && (
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white rounded-3xl border border-slate-200/90 shadow-[0_20px_50px_-18px_rgba(15,23,42,0.1)] p-7 sm:p-10 md:p-12">
+              <AnimatePresence mode="wait">
                 <motion.div
                   key={`${isLiveGoogle ? "g" : "f"}-${safeActive}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
-                >
-                  {/* Avatar Section */}
-                  <motion.div
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className="flex justify-center lg:justify-end"
-                  >
-                    <div className="relative">
-                      <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 rounded-full blur-2xl" />
-                      <ReviewAvatar
-                        photoUri={item.photoUri}
-                        initials={initials}
-                        bgColor={ac.bg}
-                        className="relative w-64 h-64 rounded-3xl text-6xl shadow-2xl"
-                      />
-                    </div>
-                  </motion.div>
-
-                  {/* Content Section */}
-                  <motion.div
-                    initial={{ x: -30, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="flex flex-col"
-                  >
-                    {/* Quote Icon */}
-                    <Quote size={40} className="text-emerald-500/20 mb-4" strokeWidth={1} />
-
-                    {/* Stars */}
-                    <div className="mb-6">
-                      <StarRow count={item.rating} />
-                    </div>
-
-                    {/* Testimonial Text */}
-                    <p className="text-lg leading-relaxed text-slate-700 mb-8 font-light">
-                      "{item.text}"
-                    </p>
-
-                    {/* Author Info */}
-                    <div className="flex items-center gap-4 pt-8 border-t border-slate-100">
-                      <ReviewAvatar
-                        photoUri={item.photoUri}
-                        initials={initials}
-                        bgColor={ac.bg}
-                        className="w-16 h-16 rounded-full text-lg flex-shrink-0 shadow-lg"
-                      />
-                      <div>
-                        <div className="text-base font-bold text-slate-900">{item.cite}</div>
-                        <div className="text-sm text-emerald-600 font-medium">{item.role}</div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </motion.div>
-              );
-            })()}
-          </AnimatePresence>
-
-          {/* Navigation Dots and Arrows */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="flex justify-center items-center gap-8 mt-16"
-          >
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Anterior testimonio"
-              className="w-12 h-12 rounded-full border-2 border-slate-200 flex items-center justify-center text-slate-600 hover:border-[#2d6a4f] hover:text-[#2d6a4f] hover:bg-emerald-50 transition-all duration-300 group"
-            >
-              <ChevronLeft size={20} className="group-hover:scale-110 transition-transform" />
-            </button>
-
-            {/* Dot indicators */}
-            <div className="flex gap-2">
-              {items.map((_, i) => (
-                <motion.button
-                  key={i}
-                  type="button"
-                  onClick={() => setActive(i)}
-                  aria-label={`Testimonio ${i + 1}`}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === safeActive
-                      ? "bg-[#2d6a4f] w-8 h-2"
-                      : "bg-slate-200 w-2 h-2 hover:bg-slate-300"
-                  }`}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.95 }}
-                />
-              ))}
-            </div>
-
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Siguiente testimonio"
-              className="w-12 h-12 rounded-full border-2 border-slate-200 flex items-center justify-center text-slate-600 hover:border-[#2d6a4f] hover:text-[#2d6a4f] hover:bg-emerald-50 transition-all duration-300 group"
-            >
-              <ChevronRight size={20} className="group-hover:scale-110 transition-transform" />
-            </button>
-          </motion.div>
-        </div>
-
-        {/* Mobile: Premium carousel */}
-        <div className="md:hidden">
-          <AnimatePresence mode="wait">
-            {items[safeActive] && (() => {
-              const item = items[safeActive];
-              const initials = getInitials(item.cite);
-              const ac = AVATAR_COLORS[safeActive % AVATAR_COLORS.length];
-              return (
-                <motion.div
-                  key={`${isLiveGoogle ? "gm" : "fm"}-${safeActive}`}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4 }}
-                  className="flex flex-col"
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.25 }}
                 >
-                  {/* Avatar */}
-                  <motion.div
-                    initial={{ scale: 0.9 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.1 }}
-                    className="flex justify-center mb-8"
-                  >
-                    <div className="relative">
-                      <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 rounded-full blur-2xl" />
-                      <ReviewAvatar
-                        photoUri={item.photoUri}
-                        initials={initials}
-                        bgColor={ac.bg}
-                        className="relative w-48 h-48 rounded-3xl text-5xl shadow-xl"
-                      />
+                  {/* Card Top: Stars + Verified Tag + Quote Mark */}
+                  <div className="flex items-center justify-between gap-4 mb-6">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <StarRow count={currentItem.rating} />
+                      <span className="inline-flex items-center rounded-full bg-emerald-50 border border-emerald-200/80 px-3 py-0.5 text-xs font-semibold text-[#1b4332]">
+                        {currentItem.role}
+                      </span>
                     </div>
-                  </motion.div>
+                    <Quote
+                      size={32}
+                      className="text-emerald-600/20 flex-shrink-0 hidden sm:block"
+                      strokeWidth={1.5}
+                    />
+                  </div>
 
-                  {/* Content Card */}
-                  <div className="bg-white rounded-3xl border border-slate-100 p-6 shadow-lg">
-                    {/* Quote Icon */}
-                    <Quote size={32} className="text-emerald-500/20 mb-4" strokeWidth={1} />
+                  {/* Editorial Quote */}
+                  <blockquote className="text-lg sm:text-xl leading-relaxed text-slate-800 font-normal mb-8 min-h-[5.5rem]">
+                    "{currentItem.text}"
+                  </blockquote>
 
-                    {/* Stars */}
-                    <div className="mb-5">
-                      <StarRow count={item.rating} />
-                    </div>
-
-                    {/* Text */}
-                    <p className="text-base leading-relaxed text-slate-700 mb-6 font-light">
-                      "{item.text}"
-                    </p>
-
-                    {/* Author */}
-                    <div className="flex items-center gap-3 pt-6 border-t border-slate-100">
+                  {/* Card Footer: Compact Author + Arrows */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-slate-100">
+                    <div className="flex items-center gap-3.5 min-w-0">
                       <ReviewAvatar
-                        photoUri={item.photoUri}
-                        initials={initials}
-                        bgColor={ac.bg}
-                        className="w-12 h-12 rounded-full text-sm flex-shrink-0 shadow-md"
+                        photoUri={currentItem.photoUri}
+                        initials={currentInitials}
+                        bgColor={currentPalette.bg}
+                        className="w-12 h-12 sm:w-14 sm:h-14 text-base ring-2 ring-emerald-500/15 shadow-sm flex-shrink-0"
                       />
-                      <div>
-                        <div className="text-sm font-bold text-slate-900">{item.cite}</div>
-                        <div className="text-xs text-emerald-600 font-medium">{item.role}</div>
+                      <div className="min-w-0">
+                        <div className="text-base font-bold text-slate-900 truncate">
+                          {currentItem.cite}
+                        </div>
+                        <div className="text-xs sm:text-sm text-slate-500 font-medium">
+                          {isLiveGoogle ? "Google Maps · 5,0 ★" : "2BEFIT"}
+                        </div>
                       </div>
+                    </div>
+
+                    {/* Controls */}
+                    <div className="flex items-center gap-2.5 ml-auto">
+                      <span className="text-xs font-semibold text-slate-400 mr-1 tabular-nums">
+                        {safeActive + 1} / {items.length}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={prev}
+                        aria-label="Anterior testimonio"
+                        className="w-10 h-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:border-[#2d6a4f] hover:text-[#2d6a4f] hover:bg-emerald-50 transition-colors"
+                      >
+                        <ChevronLeft size={18} />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={next}
+                        aria-label="Siguiente testimonio"
+                        className="w-10 h-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:border-[#2d6a4f] hover:text-[#2d6a4f] hover:bg-emerald-50 transition-colors"
+                      >
+                        <ChevronRight size={18} />
+                      </button>
                     </div>
                   </div>
                 </motion.div>
-              );
-            })()}
-          </AnimatePresence>
-
-          {/* Mobile Navigation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex justify-center items-center gap-4 mt-8"
-          >
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Anterior testimonio"
-              className="w-11 h-11 rounded-full border-2 border-slate-200 flex items-center justify-center text-slate-600 hover:border-[#2d6a4f] hover:text-[#2d6a4f] hover:bg-emerald-50 transition-all"
-            >
-              <ChevronLeft size={18} />
-            </button>
-
-            {/* Dot indicators mobile */}
-            <div className="flex gap-2">
-              {items.map((_, i) => (
-                <motion.button
-                  key={i}
-                  type="button"
-                  onClick={() => setActive(i)}
-                  aria-label={`Testimonio ${i + 1}`}
-                  className={`rounded-full transition-all ${
-                    i === safeActive
-                      ? "bg-[#2d6a4f] w-6 h-2"
-                      : "bg-slate-200 w-2 h-2"
-                  }`}
-                  whileTap={{ scale: 0.95 }}
-                />
-              ))}
+              </AnimatePresence>
             </div>
 
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Siguiente testimonio"
-              className="w-11 h-11 rounded-full border-2 border-slate-200 flex items-center justify-center text-slate-600 hover:border-[#2d6a4f] hover:text-[#2d6a4f] hover:bg-emerald-50 transition-all"
-            >
-              <ChevronRight size={18} />
-            </button>
-          </motion.div>
-        </div>
+            {/* Reviewer Quick Switcher Pills */}
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
+              {items.map((item, i) => {
+                const selected = i === safeActive;
+                const palette = AVATAR_COLORS[i % AVATAR_COLORS.length];
+                return (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setActive(i)}
+                    aria-label={item.cite}
+                    className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-semibold border transition-all ${
+                      selected
+                        ? "bg-[#1b4332] border-[#1b4332] text-white shadow-sm"
+                        : "bg-white border-slate-200 text-slate-700 hover:border-emerald-300 hover:text-[#1b4332]"
+                    }`}
+                  >
+                    <ReviewAvatar
+                      photoUri={item.photoUri}
+                      initials={getInitials(item.cite)}
+                      bgColor={palette.bg}
+                      className="w-5 h-5 text-[10px] flex-shrink-0"
+                    />
+                    <span>{getShortName(item.cite)}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
