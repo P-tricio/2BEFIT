@@ -31,6 +31,6 @@
     { "source": "/entrenamiento-presencial", "destination": "/entrenamiento-presencial/index.html" },
     { "source": "/entrenador-personal-marbella", "destination": "/entrenador-personal-marbella/index.html" },
     { "source": "/entrenador-personal-estepona", "destination": "/entrenador-personal-estepona/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }

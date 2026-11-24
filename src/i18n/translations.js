@@ -193,6 +193,13 @@ export const translations = {
     },
     testimonials: {
       title: "What our clients say",
+      subtitle: "Real transformation and coaching stories with 2BEFIT",
+      client_label: "2BEFIT Client",
+      google_verified_role: "Verified Google Review",
+      google_badge: "Google Reviews",
+      reviews_word: "reviews",
+      view_on_google: "View on Google",
+      leave_review: "Leave a review",
       items: [
         {
           text: "Incredible! The plan fits my busy life and the follow-up is constant. I feel stronger!",
@@ -573,6 +580,13 @@ export const translations = {
     },
     testimonials: {
       title: "Lo que dicen nuestros clientes",
+      subtitle: "Historias reales de transformación y éxito con 2BEFIT",
+      client_label: "Cliente 2BEFIT",
+      google_verified_role: "Reseña verificada en Google",
+      google_badge: "Reseñas en Google",
+      reviews_word: "reseñas",
+      view_on_google: "Ver en Google",
+      leave_review: "Dejar reseña",
       items: [
         {
           text: "Increíble! El plan es perfecto para mi vida ocupada y el seguimiento es constante. Me siento más fuerte!",
