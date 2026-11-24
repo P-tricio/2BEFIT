@@ -98,23 +98,26 @@ const LeadMagnet = () => {
       createdAt: new Date().toISOString(),
     };
 
-    try {
-      await fetch("https://formsubmit.co/ajax/patricio@2befit.online", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          _subject: `[2BEFIT Lead Magnet] ${activeCopy.title} - ${cleanName}`,
-          _template: "table",
-          _captcha: "false",
-          ...leadPayload,
-        }),
-      });
-    } catch {
-      // Non-blocking: immediate PDF access still succeeds even offline
-    }
+    const submitPromise = fetch("https://formsubmit.co/ajax/patricio@2befit.online", {
+      method: "POST",
+      keepalive: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        _subject: `[2BEFIT Lead Magnet] ${activeCopy.title} - ${cleanName}`,
+        _template: "table",
+        _captcha: "false",
+        ...leadPayload,
+      }),
+    }).catch(() => null);
+
+    // Wait at most 1.5s so FormSubmit keeps sending in background without blocking PDF unlock
+    await Promise.race([
+      submitPromise,
+      new Promise((resolve) => setTimeout(resolve, 1500)),
+    ]);
 
     const resultState = {
       guideKey: selectedGuide,
