@@ -218,6 +218,61 @@ export const translations = {
       whatsapp_message:
         "Hello! I'd like to start my transformation with 2BEFIT",
     },
+    lead_magnet: {
+      badge: "Free Resources · 2BEFIT SYSTEM v1.0",
+      title: "Download our practical protocols in PDF",
+      subtitle:
+        "Choose the exact playbook matching your current bottleneck. Instant bilingual PDF (EN & ES) without relying on generic templates.",
+      targets: {
+        individual: "Individual",
+        couple: "Couples",
+      },
+      goals: {
+        perdida_grasa: "Fat loss & body recomposition",
+        ganancia_muscular: "Lean strength & muscle",
+        boda_evento: "Wedding / special event",
+        salud_general: "Energy & long-term health",
+      },
+      guides: {
+        adapt: {
+          tag: "ADAPT · EXPRESS PROTOCOL",
+          title: "20-Minute Express Protocol (Busy Days & Travel)",
+          desc: "How to keep strength stimulus and consistency alive with 1 main compound lift + 12-min AMRAP, plus a 10-min hotel fallback.",
+        },
+        pareja: {
+          tag: "EAT · COUPLES SYSTEM",
+          title: "Same Base, Tailored Plate + 80/20 Guide",
+          desc: "Cook one shared meal base together and scale portions seamlessly for different fat-loss or muscle targets—no separate kitchens.",
+        },
+        fuerza: {
+          tag: "TRAIN · INTENSITY MANUAL",
+          title: "Real Intensity & RIR 1-2 Manual",
+          desc: "Stop guessing weights: understand Reps In Reserve, cut junk volume, and know when to apply the +2.5–5% progression rule.",
+        },
+      },
+      form: {
+        modality_label: "Who is this for?",
+        goal_label: "Main goal",
+        name_label: "First name",
+        name_placeholder: "Your name",
+        email_label: "Email address",
+        email_placeholder: "you@example.com",
+        phone_label: "WhatsApp (optional, for coach tips)",
+        submit_cta: "Unlock & Download PDF",
+        submitting_cta: "Preparing your PDF...",
+        error_invalid: "Please enter your name and a valid email address.",
+        privacy_note: "Zero spam. Instant PDF download + optional diagnostic help.",
+      },
+      unlocked: {
+        badge: "Protocol unlocked",
+        desc: "Your download started automatically. You can also reopen it anytime below or ask Patricio & Cristina directly.",
+        download_cta: "Download PDF again",
+        open_cta: "Open PDF in browser",
+        bridge_prompt: "Want help tailoring this protocol to your weekly schedule?",
+        whatsapp_cta: "Send WhatsApp to Patricio & Cristina",
+        change_cta: "Choose another protocol",
+      },
+    },
     faq: {
       title: "Frequently Asked Questions",
       questions: [
@@ -542,6 +597,61 @@ export const translations = {
       email_cta: "Contactar por email",
       whatsapp_message:
         "¡Hola! Me gustaría empezar mi transformación con 2BEFIT",
+    },
+    lead_magnet: {
+      badge: "Recursos Gratuitos · 2BEFIT SYSTEM v1.0",
+      title: "Descarga gratis nuestros protocolos en PDF",
+      subtitle:
+        "Elige la guía práctica según tu cuello de botella actual. Descarga inmediata en PDF (Español e Inglés) con protocolos reales del método.",
+      targets: {
+        individual: "Individual",
+        couple: "Pareja",
+      },
+      goals: {
+        perdida_grasa: "Pérdida de grasa y recomposición",
+        ganancia_muscular: "Fuerza y masa muscular",
+        boda_evento: "Boda o evento especial",
+        salud_general: "Energía y hábitos duraderos",
+      },
+      guides: {
+        adapt: {
+          tag: "ADAPT · DÍAS SIN TIEMPO",
+          title: "Protocolo Express 20 Minutos (Agenda y Viajes)",
+          desc: "Mantén tu fuerza y tu racha con 1 ejercicio principal + AMRAP de 12 minutos, más plan de rescate de 10 min en hotel o casa.",
+        },
+        pareja: {
+          tag: "EAT · SISTEMA PAREJAS",
+          title: "Sistema Misma Base, Distinto Plato + Regla 80/20",
+          desc: "Una sola compra y cocinado único en casa para cumplir objetivos distintos en pareja sin dietas cerradas ni cocinar doble.",
+        },
+        fuerza: {
+          tag: "TRAIN · INTENSIDAD REAL",
+          title: "Manual de Intensidad Real y RIR 1-2",
+          desc: "Deja de entrenar a ciegas: aprende cuándo parar la serie, elimina volumen basura y aplica la regla de progresión del +2,5–5 %.",
+        },
+      },
+      form: {
+        modality_label: "¿Para quién buscas el plan?",
+        goal_label: "Objetivo principal",
+        name_label: "Nombre",
+        name_placeholder: "Tu nombre",
+        email_label: "Email",
+        email_placeholder: "tu@email.com",
+        phone_label: "WhatsApp (opcional)",
+        submit_cta: "Desbloquear y descargar PDF",
+        submitting_cta: "Preparando tu PDF...",
+        error_invalid: "Introduce tu nombre y un email válido para desbloquear la descarga.",
+        privacy_note: "Sin spam. Descarga directa inmediata del PDF en tu dispositivo.",
+      },
+      unlocked: {
+        badge: "Protocolo desbloqueado",
+        desc: "Tu descarga debería haberse iniciado automáticamente. También puedes abrir o guardar el PDF desde aquí abajo:",
+        download_cta: "Volver a descargar PDF",
+        open_cta: "Abrir PDF en el navegador",
+        bridge_prompt: "¿Quieres que te ayudemos a encajar este protocolo en tu semana real?",
+        whatsapp_cta: "Escribir por WhatsApp a Patricio y Cristina",
+        change_cta: "Elegir otro protocolo",
+      },
     },
     faq: {
       title: "❓ Preguntas frecuentes",

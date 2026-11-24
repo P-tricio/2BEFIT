@@ -8,6 +8,7 @@ import Plans from "./Plans";
 import InPersonTraining from "./InPersonTraining";
 import Instagram from "./Instagram";
 import FAQ from "./FAQ";
+import LeadMagnet from "./LeadMagnet";
 import Contact from "./Contact";
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
       <InPersonTraining />
       <Instagram />
       <FAQ />
+      <LeadMagnet />
       <Contact />
     </>
   );
